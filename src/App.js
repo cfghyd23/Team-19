@@ -1,12 +1,15 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Contact from "./components/Contact"
-import About from "./components/About"
-import Service from "./components/Service"
 import Home from "./components/Home"
+import Service from "./components/Service"
+import About from "./components/About"
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import BloodDonationForm from './components/BloodDonationForm';
 
+
+import Statistics from './components/Statistics'
 function App() {
   return (
     <>
@@ -15,10 +18,11 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" exact Component={Home} />
-            <Route path="/service" exact Component={Service} />
             <Route path="/about" exact Component={About} />
-            <Route path="/contact" exact Component={Contact} />
-
+            <Route path="/Service" exact Component={Service} />
+            <Route path="/Statistics" exact Component={Statistics} />
+            <Route path="/BloodDonationForm" exact Component={BloodDonationForm} />
+            
 
           </Routes>
           <Footer />
