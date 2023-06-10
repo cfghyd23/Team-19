@@ -6,6 +6,13 @@ const getAllDonors = require('./controllers/donors');
 const app = express();
 const cors = require('cors');
 app.use(express.json());
+app.use(
+    cors({
+      origin: process.env.FRONTEND_URI,
+      methods: "GET,POST,PUT,DELETE,OPTIONS",
+      credentials: true,
+    })
+  );
 
 const donorRouter = require('./routes/donors');
 const patientRouter = require('./routes/patients');

@@ -130,7 +130,11 @@ const DonorSchema = new mongoose.Schema(
     patientId:{
         type: String,
         default:null,
-    }
+    },
+    priority:{
+        type: Number,
+        default:11,
+    },
   },
   { timestamps: true }
 )
