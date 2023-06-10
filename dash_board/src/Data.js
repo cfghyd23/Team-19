@@ -2,7 +2,7 @@ export const UserData = [
     {
         id: 1,
         year: 2016,
-        userGain: 80000,
+        userGain: '18-30',
         userLost: 823,
         Donor: 750,
         Recepient: 850,
@@ -10,7 +10,7 @@ export const UserData = [
     {
         id: 2,
         year: 2017,
-        userGain: 45677,
+        userGain: '30-40',
         userLost: 345,
         Donor: 300,
         Recepient: 450,
@@ -18,7 +18,7 @@ export const UserData = [
     {
         id: 3,
         year: 2018,
-        userGain: 78888,
+        userGain: '50-60',
         userLost: 555,
         Donor: 150,
         Recepient: 200,
@@ -26,17 +26,10 @@ export const UserData = [
     {
         id: 4,
         year: 2019,
-        userGain: 90000,
-        userLost: 4555,
+        userGain: '60+',
+        userLost: 455,
         Donor: 650,
         Recepient: 600,
     },
-    {
-        id: 5,
-        year: 2020,
-        userGain: 4300,
-        userLost: 234,
-        Donor: 600,
-        Recepient: 550,
-    },
+
 ];

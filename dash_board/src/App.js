@@ -6,6 +6,8 @@ import BarChart from './Components/BarChart'; // Import the chart components
 import LineChart from './Components/LineChart';
 import PieChart from './Components/PieChart';
 import { UserData } from './Data';
+import { UserData as userData2 } from './Data2';
+
 
 function App() {
   const [userData, setUserData] = React.useState({
@@ -27,11 +29,12 @@ function App() {
     ],
   });
 
+
   const DonorData = {
     labels: userData.labels,
     datasets: [
       {
-        label: 'Number of Recepients',
+        label: 'Number of Donors',
         data: UserData.map((data) => data.Donor),
         backgroundColor: 'rgba(255,99,132,1)',
         borderColor: 'black',
@@ -44,7 +47,7 @@ function App() {
     labels: userData.labels,
     datasets: [
       {
-        label: 'Number of Donors',
+        label: 'Number of Recepients',
         data: UserData.map((data) => data.Recepient),
         backgroundColor: 'rgba(255,99,132,1)',
         borderColor: 'black',
@@ -52,6 +55,45 @@ function App() {
       },
     ],
   };
+  const pieChartData2 = {
+    labels: userData2.map((data) => data.id),
+    datasets: [
+      {
+        data: userData2.map((data) => data.count),
+        backgroundColor: [
+          'rgba(75, 192, 192, 1)',
+          '#ecf0f1',
+          '#50AF95',
+          '#f3ba2f',
+          '#2a71d0',
+        ],
+        borderColor: 'black',
+        borderWidth: 2,
+      },
+    ],
+  };
+
+  const barChartData = {
+    labels: UserData.map((data) => data.userGain),
+    datasets: [
+      {
+        label: 'User Lost',
+        data: UserData.map((data) => data.userLost),
+        backgroundColor: [
+          'rgba(75,192,192,1)',
+          '#ecf0f1',
+          '#50AF95',
+          '#f3ba2f',
+          '#2a71d0',
+        ],
+        borderColor: 'black',
+        borderWidth: 2,
+      },
+    ],
+  };
+
+
+
 
 
   return (
@@ -61,29 +103,30 @@ function App() {
       <div className="App">
 
         <div className='rowOne'>
-          <div className='card'>
+          <div className='card' style={{ padding: '100px' }}>
             <Card title="Bar Chart" content="Age Distribution of Donors">
-              <BarChart chartData={userData} />
+              <BarChart chartData={barChartData} />
             </Card>
           </div>
           <div style={{ padding: '100px' }}></div>
 
-          <div className='card'>
-            <Card title="Pie Chart" content="This is a pie chart">
-              <PieChart chartData={userData} />
+          <div className="card" style={{ paddingLeft: '100px', paddingRight: '100px' }}>
+
+            <Card title="Availability of Blood by Group" content="Blood Group">
+              <PieChart chartData={pieChartData2} />
             </Card>
           </div>
 
         </div>
         <div className='rowTwo'>
-          <div className='card'>
-            <Card title="Line Chart" content="Year Wise Recepients">
+          <div className='card' style={{ padding: '100px' }}>
+            <Card title="Recepients" content="Year Wise Recepients">
               <LineChart chartData={RecepientData} />
             </Card>
           </div>
           <div style={{ padding: '100px' }}></div>
-          <div className='card'>
-            <Card title="Line Chart" content="Year Wise Donors">
+          <div className='card' style={{ padding: '100px' }}>
+            <Card title="Donors" content="Year Wise Donors">
               <LineChart chartData={DonorData} />
             </Card>
           </div>
@@ -95,10 +138,14 @@ function App() {
         </div>
 
 
-      </div>
+      </div >
     </>
 
   );
+
+
+
+
 }
 
 export default App;

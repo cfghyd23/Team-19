@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   display: flex;
-
   flex-wrap: wrap;
   flex-direction: column;
   /* Add flex-wrap property to wrap cards to the next row */
