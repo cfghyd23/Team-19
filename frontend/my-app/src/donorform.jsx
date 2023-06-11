@@ -62,7 +62,7 @@ const BloodDonationForm = () => {
           <div className="form-field">
             <label htmlFor="ageGroup">Age:</label>
             <input
-              type="text"
+              type="Number"
               name="ageGroup"
               value={donorData.ageGroup}
               onChange={handleChange}
@@ -73,7 +73,7 @@ const BloodDonationForm = () => {
           <div className="form-field">
             <label htmlFor="weight">Weight:</label>
             <input
-              type="text"
+              type="Number"
               name="weight"
               value={donorData.weight}
               onChange={handleChange}
