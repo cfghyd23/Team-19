@@ -7,6 +7,7 @@ const getAllDonors = async (req, res) => {
 }
 
 const createDonor = async (req, res) => {
+    console.log(req.body.id)
     id = req.body.id;
     const donordup = await Donor.findOne({id})
     if(donordup){
@@ -14,7 +15,7 @@ const createDonor = async (req, res) => {
     }
     const donor = await Donor.create(req.body)
     console.log(req.body.id)
-    res.status(200).send({donor})
+    res.status(200).send(donor)
 }
 
 module.exports = {

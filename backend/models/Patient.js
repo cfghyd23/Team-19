@@ -2,16 +2,20 @@ const mongoose = require('mongoose')
 
 const PatientSchema = new mongoose.Schema(
   {
-    name: {
+    patientName: {
       type: String,
       required: [true, 'Please provide name'],
       maxlength: 50,
     },
-    age: {
-      type: Number,
+    ageGroup: {
+      type: String,
       required: [true, 'Please provide age'],
     },
-    blood_group: {
+    weight: {
+      type: String,
+      required: [true, 'Please provide weight'],
+    },
+    bloodGroup: {
         type: String,
         enum: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'],
         required: [true, 'Please provide blood group'],
@@ -22,16 +26,16 @@ const PatientSchema = new mongoose.Schema(
       default: 'Male',
     },
     
-    id: {
-      type: String,
-      required: [true, 'Please provide aadhar number'],
-    },
+    // idCard: {
+    //   type: String,
+    //   required: [true, 'Please provide aadhar number'],
+    // },
     address: {
         type: String,
         required: [true, 'Please provide address'],
         maxlength: 100,
       },
-    phone: {
+    phoneNumber: {
         type: String,
         required: [true, 'Please provide phone number'],
     },
@@ -40,8 +44,8 @@ const PatientSchema = new mongoose.Schema(
         type: String,
         required: [true, 'Please provide email'],
     },
-    medicalreport_id: {
-        type: Number,
+    medical_id: {
+        type: String,
         required: [true, 'Please provide medical report id'],
     },
   },
