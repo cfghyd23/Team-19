@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import '../styles/Patient.css'
+
 import axios from 'axios';
 
-const EmergencyForm = () => {
+const PatientForm = () => {
     const [patientData, setPatientData] = useState({
         patientName: '',
         bloodGroup: '',
@@ -26,8 +27,8 @@ const EmergencyForm = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(patientData)
-          axios.post("http://localhost:3000/emergency", patientData).then(response=>{
-            console.log('Response:',response.data);
+          axios.post("http://localhost:3000/patients", patientData).then(response=>{
+            console.log('Response:',response);
           })
         .catch(error=> {
           console.error(error);
@@ -38,7 +39,7 @@ const EmergencyForm = () => {
     <div className="center-container">
       <div className="image-container">
         <img src="https://i0.wp.com/www.mmumullana.org/wp-content/uploads/2021/06/Blood-Donation-2.jpg?fit=802%2C602&ssl=1" alt="Blood donation" />
-        <h1 className="heading">EMERGENCY FORM</h1>
+        <h1 className="heading">PATIENT</h1>
       </div>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
@@ -216,4 +217,4 @@ const EmergencyForm = () => {
   );
 };
 
-export default EmergencyForm;
+export default PatientForm;
