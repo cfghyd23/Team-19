@@ -16,6 +16,7 @@ app.use(
 
 const donorRouter = require('./routes/donors');
 const patientRouter = require('./routes/patients');
+const emergencyRouter = require('./routes/emergency');
 
 app.get('/', (req, res) => {
     res.send('<h1>Welcome to Blood Warriors</h1>');
@@ -25,6 +26,7 @@ app.get('/', (req, res) => {
 
 app.use('/donors', donorRouter);
 app.use('/patients', patientRouter);
+app.use('/emergency',emergencyRouter);
 
 
 const start = async () => {

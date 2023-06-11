@@ -12,8 +12,8 @@ const createPatient = async (req, res) => {
     }
     const patient = await Patient.create(req.body)
     await updatePatientId(patient.bloodGroup, patient.id);
-    // const result = Donor.find({patientId:patient.id});
-    // console.log(`Your donors are: ${result}`)
+    const result = Donor.find({patientId:patient.id});
+    console.log(`Your donors are: ${result}`)
     res.status(200).send({patient})
 }
 
