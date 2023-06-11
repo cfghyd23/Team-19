@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import BloodDonationForm from './donorform';
 import PatientForm from './patientform';
+import EmergencyForm from './emergencyform';
 
 import React, { useState, useEffect } from 'react';
 
@@ -22,7 +23,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <PatientForm/>
+      <EmergencyForm/>
       </div>
   );
 }
