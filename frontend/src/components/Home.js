@@ -99,7 +99,7 @@ const Home = () => {
   <div>
 
     <div classname="firstrow">
-    <div className="card-1">
+    <div className="card-1" style={{padding:'10px'}}>
       <div className="card-content">
         <h2 className="heading">Donors</h2>
         <img className="myimg" src={"https://st2.depositphotos.com/1017986/8169/i/450/depositphotos_81693086-stock-photo-female-hands-holding-red-heart.jpg"}></img>
@@ -107,8 +107,11 @@ const Home = () => {
       </div>
       <div className="card-2">
         <h2 className="heading">Patient</h2>
+        
         <img className="myimg" src={"https://media.istockphoto.com/id/1315395944/photo/experienced-phlebotomist-preparing-a-woman-for-blood-draw.jpg?s=612x612&w=0&k=20&c=MX1sfSztBJIiCW0wOqxDWxLuXWOxrlTvOO6azfF2buY="}></img>
+        <div>
         <button onClick={()=>{navigate('/Patient'); }} className="card-button"> Patient </button>
+        </div>
       </div> 
     </div>
 
@@ -116,12 +119,16 @@ const Home = () => {
       <div className="card-3">
         <h2 className="heading">Service station</h2>
         <img className="myimg" src={"https://urbanhospitaldahod.com/assets/uploads/bl4.jpg"}></img>
+        <div style={{padding:'10px'}}>
         <button onClick={()=>{navigate('/Service'); }} className="card-button">Blood Banks</button>
+        </div>
       </div> 
       <div className="card-4">
         <h2 className="heading">About us</h2>
         <img className="myimg" src={"https://img.freepik.com/free-vector/contact-us-concept-landing-page_52683-12860.jpg"}></img>
+        <div style={{padding:'10px'}}>
         <button onClick={()=>{navigate('/about'); }} className="card-button">About Us</button>
+        </div>
       </div> 
       </div>
 

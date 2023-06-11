@@ -158,9 +158,13 @@ h2 {
   width: 25%; /* Adjust the width as needed */
   height: 280px;
   padding-bottom: 20px;
-  padding-top: 0px;
+  padding-top: 10px;
 }
 
 .heading{
   padding-bottom: 0px;
+}
+
+.firstrow{
+  display: flex;
 }
