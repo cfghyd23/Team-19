@@ -8,7 +8,7 @@ const DonorSchema = new mongoose.Schema(
       maxlength: 50,
     },
     ageGroup: {
-      type: String,
+      type: Number,
       required: [true, 'Please provide age'],
       validate:{
         validator: function(v){
@@ -18,8 +18,14 @@ const DonorSchema = new mongoose.Schema(
       }
     },
     weight: {
-        type: String,
+        type: Number,
         required: [true, 'Please provide weight'],
+        validate:{
+          validator: function(v){
+              return v>50
+              },
+              message: 'Weight must be greater than 50'
+        }
       },
       haemoglobin: {
         type: String,
